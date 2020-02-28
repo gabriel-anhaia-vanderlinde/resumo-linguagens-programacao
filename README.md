@@ -1,1 +1,1 @@
-# logica-e-fundamentos-da-programa-o
+# logica-e-fundamentos-da-programação

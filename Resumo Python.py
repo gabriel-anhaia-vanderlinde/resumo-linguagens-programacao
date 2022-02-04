@@ -313,6 +313,416 @@ for count in range(0, 501):
         soma += count
 print('A soma é de {}'.format(soma))
 /////////////////////////
+soma = 0
+for count in range(0, 6):
+    numero = int(input('Escolha um numero: '))
+    if numero % 2 == 0:
+        soma += numero
+print('A soma é de {}'.format(soma))
+/////////////////////////
+peso1 = float(input('Informe o peso da pessoa: '))
+peso2 = float(input('Informe o peso da pessoa: '))
+peso3 = float(input('Informe o peso da pessoa: '))
+peso4 = float(input('Informe o peso da pessoa: '))
+peso5 = float(input('Informe o peso da pessoa: '))
+print('O maior peso foi de {}'.format(max(peso1, peso2, peso3, peso4, peso5)))
+print('O menor peso foi de {}'.format(min(peso1, peso2, peso3, peso4, peso5)))
+/////////////////////////
+nota = float(input('Digite um valor valido'))
+while nota > 10 or nota < 0:
+    nota = float(input('Valor não é valido, digite outro valor'))
+/////////////////////////
+nota_invalida = True
+while(nota_invalida):
+    nota = float(input('Informe uma nota entre o e 10: '))
+    if nota <= 10 and nota >= 0:
+        nota_invalida = False
+
+print('NOta registrada é {} '.format(nota))
+/////////////////////////
+# Desafio FizzBuzz
+# Neste problema, você deverá exibir uma lista de 1 a 100, um em cada linha, com as seguintes exceções:
+
+# Números divisíveis por 3 deve aparecer como 'Fizz' ao invés do número;
+# Números divisíveis por 5 devem aparecer como 'Buzz' ao invés do número;
+# Números divisíveis por 3 e 5 devem aparecer como 'FizzBuzz' ao invés do número'.
+
+def edivisivel(a, b):
+    if a % b == 0:
+        return True
+    else:
+        return False
+
+def fizzbuzz(num):
+    if edivisivel(num, 3) and edivisivel(num, 5):
+        return 'FizzBuzz'
+    elif edivisivel(num, 3):
+        return 'Fizz'
+    elif edivisivel(num, 5):
+        return 'Buzz'
+    else:
+      return num
+     
+
+assert fizzbuzz(3) == 'Fizz'   
+assert fizzbuzz(6) == 'Fizz'
+assert fizzbuzz(9) == 'Fizz'
+
+assert fizzbuzz(5) == 'Buzz'
+assert fizzbuzz(10) == 'Buzz'
+
+assert fizzbuzz(15) == 'FizzBuzz'
+assert fizzbuzz(30) == 'FizzBuzz'
+assert fizzbuzz(11) == 11
+        
+assert edivisivel(4, 2) == True
+assert edivisivel(5, 2) == False
+
+for i in range(1, 100 + 1):
+    fb = fizzbuzz(i)
+    print(fb)
+
+
+
+    
+
+  
+print('Teste OK!')
+/////////////////////////
+usuario_senha_invalidos = True
+
+while usuario_senha_invalidos:
+    usuario = input('Informe um nome de usuario')
+    senha = input('informe uma senha diferente ')
+    if usuario == senha:
+        print('Informe uma senha ou usuario diferente: ')
+    else:
+        print('Seu usuario e senha foram cadastrados, bem vindo {} '.format(usuario))
+        usuario_senha_invalidos = False
+/////////////////////////
+nome_invalido = True
+while nome_invalido:
+    nome = input('Informe seu nome: ')
+    if len(nome) > 3:
+        print('nome confere')
+        nome_invalido = False
+    else:
+        print('Informe um nome valido')
+
+idade_invalida = True
+while idade_invalida:
+    idade = int(input('Informe sua idade: '))
+    if idade >= 0 and idade <=150:
+        print('idade confere')
+        idade_invalida = False
+    else:
+        print('Digite uma idade valida:')
+
+salario_invalido = True
+while salario_invalido:
+    salario = float(input('Informe seu salario: '))
+    if salario > 0:
+        print('salario confere')
+        salario_invalido = False
+    else:
+        print('Digite um salario valido:')
+
+sexo_invalido = True
+while sexo_invalido:
+    sexo = input('informe seu sexo, coloque (F) para femenino e (M) para masculino: ')
+    if sexo == 'F' or sexo == 'M':
+        print('sexo confere')
+        sexo_invalido = False
+    else:
+        print('Digite um sexo valido:')
+
+estado_civil_invalido = True
+while estado_civil_invalido:
+    estado_civil = input('Informe seu estado civil, coloque (s) para solteiro(a), (c) para casado(a), (v) para viuvo(a) e (d) para divorciado :  ')
+    if estado_civil == 's' or estado_civil == 'c' or estado_civil == 'v' or estado_civil == 'd':
+        print('estado civil confere')
+        estado_civil_invalido = False
+    else:
+      print('Digite um estado civil valido:')
+    
+print('''
+Formulario:
+Nome: {}
+Idade: {}
+Salario: {}
+Sexo: {}
+Estado Civil : {}
+'''.format(nome, idade, salario, sexo, estado_civil))
+/////////////////////////
+#upondo que a população de um país A seja da ordem de 80000 habitantes
+#com uma taxa anual de crescimento de 3% e que a população de B 
+#seja 200000 habitantes com uma taxa de crescimento de 1.5%. Faça um programa
+#que calcule e escreva o número de anos necessários para que a população do
+#país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
+
+pop_a = 80000
+pop_b = 200000
+anos = 0
+cres_a = 0.03
+cres_b = 0.015
+while (pop_a < pop_b):
+    anos += 1
+    pop_a = pop_a + (pop_a * cres_a)
+    pop_b = pop_b + (pop_b * cres_b)
+print("Após {} anos o país A ultrapassou o país B em número de habitantes.".format(anos))
+print("País A: {}".format(int(pop_a)))
+print("País B: {}".format(int(pop_b)))
+/////////////////////////
+populacoes = True
+while populacoes: 
+    pop_a = int(input('informe a população da cidade A: '))
+    pop_b = int(input('informe a população da cidade B: '))
+    anos = 0
+    cres_a = float(input('informe a taxa de crescimento da população da cidade A: '))
+    cres_b = float(input('informe a taxa de crescimento da população da cidade B: '))
+    while (pop_a < pop_b):
+        anos += 1
+        pop_a = pop_a + (pop_a * cres_a)
+        pop_b = pop_b + (pop_b * cres_b)
+        if pop_a > pop_b:
+            print("Após {} ano(s) o país A ultrapassara o país B em número de habitantes.".format(anos))
+            print("País A: {}".format(int(pop_a)))
+            print("País B: {}".format(int(pop_b)))
+        else:
+            print('Após {} ano(s) a cidade A ainda não atingiu ou superou a quantidade de habitantes da cidade B'.format(anos))
+    escolha = input('Quer fazer uma contagem relacionando as populações? S/N :')
+    if escolha == 'N' or escolha == 'n':
+        break
+/////////////////////////
+nomes = ('gabriel', 'joao', 'pedro')
+
+for i, valor in enumerate(nomes):
+    print('o valor {} esta na posicão {} da tupla'.format(valor, i))
+/////////////////////////
+from random import randint
+
+numeros = (randint(0, 100),randint(0, 100),randint(0, 100),randint(0, 100),randint(0, 100))
+print(numeros)
+
+maior = 0
+menor = 0
+
+for index, valor in enumerate(numeros):
+    if index == 0:
+        maior = valor
+        menor = valor
+    else:
+        if valor > maior:
+            maior = valor
+        if valor < menor:
+            menor = valor
+
+print('o maior valor é {}'.format(maior))
+print('o menor valor é {}'.format(menor))
+/////////////////////////
+numero = int(input('Informe um numero: '))
+
+for count in range(1, 11):
+    soma = numero * count
+    print('{} * {} = {}. '.format(numero, count, soma))
+/////////////////////////
+valores = (
+    int(input('Informe um valor: ')),
+    int(input('Informe um valor: ')),
+    int(input('Informe um valor: ')),
+    int(input('Informe um valor: ')),
+    int(input('Informe um valor: ')),
+)
+
+qnt_9 = 0
+index_de3 = None
+for valor in valores:
+    if valor == 9:
+        qnt_9 = qnt_9 + 1
+
+print('Foi encontrado {} noves entre esses valores'.format(qnt_9))
+if 3 in valores:
+    print('Foi encontrado o numero três na posição {}'.format(valores.index(3)))
+else:
+    print('Não foi encontrado nenhum três na lista')
+
+for valor in valores:
+    if valor % 2 == 0:
+        print('Numero par {}'.format(valor))
+/////////////////////////
+lista = ('Feijão','5,00', 'Arroz', '3,99', 'Macarrão', '2,50')
+print('''
+o {} , está custando {}.
+o {} , está custando {}.
+o {} , está custando {}.
+'''.format(lista[0], lista[1], lista[2], lista[3], lista[4], lista[5]))
+/////////////////////////
+
+palavras = ('caixa', 'veneno', 'bebida', 'carregador', 'diametro')
+
+for palavra in palavras:
+    print('A palavra {}, possui as segintes vogais: '.format(palavra), end='')
+    for letra in palavra:
+        if letra in 'aeiou':
+            print('{} ,'.format(letra), end='')
+    print()
+/////////////////////////
+lista = []
+for valor in range(5):
+    valor = int(input('numero: '))
+    lista.append(valor)
+
+maior = max(lista)
+menor = min(lista)
+maior_index = lista.index(maior)
+menor_index = lista.index(menor)
+print(lista)
+print('O Maior número é {}, estando na poseição {}.\n O Menor número é {}, estando na poseção {} .'.format(maior,maior_index,menor,menor_index))
+/////////////////////////
+continuar_adicionando_numeros = True
+listas_de_numeros = []
+while continuar_adicionando_numeros:
+    numero = int(input('informe um numero: '))
+
+    if numero in listas_de_numeros:
+        print('Esse valor ja se encontra na lista')
+    else:
+        listas_de_numeros.append(numero)
+        print('Valor Adiciona a lista')
+
+    decisao = input('Deseja continuar informando outros números? . S/N ')
+    if decisao in 'Nn':
+        continuar_adicionando_numeros = False
+
+    
+
+listas_de_numeros.sort()
+print(listas_de_numeros)
+/////////////////////////
+numeros = []
+
+for count in range(0, 5):
+    numero = int(input('Informe um numero: '))
+
+    if count == 0 or numero > numeros[-1]:
+        numeros.append(numero)
+    else:
+        posicao = 0
+        while posicao < len(numeros):
+            if numero >= numeros[posicao]:
+                numeros.insert(posicao, numero)
+                break
+            posicao += 1
+
+print(numeros)
+/////////////////////////
+lista = []
+
+while True:
+    numero = int(input('Informe um número: '))
+    lista.append(numero)
+
+    decisao = input('Deseja continuar adicionando outros números: S/N ')
+    if decisao in 'Nn':
+        break
+
+print(lista)
+print('{} numeros listados. '.format(len(lista)))
+lista.sort(reverse=True)
+print(lista)
+
+if 5 in lista:
+    print('O valor 5 está na lista e se encontra na posução {}')
+else:
+    print('o valor 5 não se encontra na lista. ')
+/////////////////////////
+lista = []
+lista_par = []
+lista_impar = []
+while True:
+    numero = int(input('Informe um número: '))
+    lista.append(numero)
+
+    if numero % 2 == 0:
+        lista_par.append(numero)
+    else:
+        lista_impar.append(numero)
+    
+    decisao = input('Deseja continuar adicionando outros números: S/N ')
+    if decisao in 'Nn':
+        break
+
+print(lista)
+print('Numeros pares: {}'.format(lista_par))
+print('Numeros impares: {}'.format(lista_impar))
+/////////////////////////
+#FUNÇÃO 1
+def funcao1(n):
+    for i in range(n):
+        i += 1
+        print(str(i) * i)
+
+
+n = int(input('Digite um número: '))
+funcao1(n)
+
+#FUNÇÃO 2
+def funcao2(n):
+    x = 1
+    while x <= n:
+        y = 1
+        piramide = ''
+        while y <= x:
+            piramide += str(y) + ', '
+            y += 1
+        print (piramide)
+        x += 1
+
+
+n = int(input('Digite um número: '))
+funcao2(n)
+
+#FUNÇÃO 3
+def funcao3():
+    valor1 = int(input('Informe um valor: '))
+    valor2 = int(input('Informe um valor: '))
+    valor3 = int(input('Informe um valor: '))
+
+
+    soma = valor1 + valor2 + valor3
+    print(soma)
+funcao3()
+
+#FUNÇÃO 4
+def funcao4(n):
+    if n >= 0:
+        print('O número é positivo(P)')
+    else:
+        print('O número é negativo(N)')
+
+
+n = int(input('Informe um numero: '))
+funcao4(n)
+
+#FUNÇÃO 
+def somalImposto(taxaImposto, custo):
+    porce_1 = custo /100
+    imposto = taxaImposto * porce_1
+    valor_final = custo + imposto
+    print(f'O valor do produto com impostos é de {valor_final}')
+
+
+
+taxaImposto = float(input('Informe a porcentagem do imposto:'))
+custo = float(input('Informe o custo do produto'))
+somalImposto(taxaImposto, custo)
+/////////////////////////
+
+/////////////////////////
+
+/////////////////////////
+
+/////////////////////////
 
 /////////////////////////
 

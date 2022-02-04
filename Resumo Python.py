@@ -63,6 +63,59 @@ print('O numero {}, multiplicado por {}, é igual a {}'.format(Numero, 8, Numero
 print('O numero {}, multiplicado por {}, é igual a {}'.format(Numero, 9, Numero*9))
 print('O numero {}, multiplicado por {}, é igual a {}'.format(Numero, 10, Numero*10))
 
+
+/////////////////////////
+salario = float(input('Salário do trabalhador?'))
+aumento = salario + salario*0.15
+print('O novo salario com o aumento é de {}'.format(aumento))
+/////////////////////////
+Numero = float(input('Informe um número'))
+print(int(Numero))
+/////////////////////////
+catetoad = float(input('Informe o cateto adjacente'))
+catetoop = float(input('Informe o cateto oposto'))
+hipotequ = catetoad*catetoad + catetoop*catetoop
+hipotefi = hipotequ**0.5
+print('A hipotenusa equivale a {}'.format(hipotefi))
+/////////////////////////
+import math
+ang = float(input('digite o ângulo que você deseja.'))
+seno = math.sin(math.radians(ang))
+print('seno : {: .2}'.format(seno))
+cosseno = math.cos(math.radians(ang))
+print('cosseno : {: .2}'.format(cosseno))
+tangente = math.tan(math.radians(ang))
+print('tangente : {: .2}'.format(tangente))
+/////////////////////////
+import random
+aluno1 = str(input('Nome do aluno'))
+aluno2 = str(input('Nome do aluno'))
+aluno3 = str(input('Nome do aluno'))
+aluno4 = str(input('Nome do aluno'))
+alunos = [aluno1, aluno2, aluno3, aluno4]
+random.shuffle(alunos)
+print('Sorteio:',alunos)
+/////////////////////////
+import random
+aluno1 = str(input('Nome do aluno'))
+aluno2 = str(input('Nome do aluno'))
+aluno3 = str(input('Nome do aluno'))
+aluno4 = str(input('Nome do aluno'))
+ganhador =[aluno1, aluno2, aluno3, aluno4]
+print('O ganhador foi {}'.format(random.choice(ganhador)))
+/////////////////////////
+velocidade = int(input('Velocidade do Carro: '))
+multa = (velocidade - 80) * 7
+if velocidade > 80 :
+    print('Você ultrapassou o limite permitido, será mutado em R${}' .format(multa))
+else:
+    print('Você esta numa velocidade correta, prossiga e uma boa viagem. ')
+/////////////////////////
+Numero = int(input('Digite um Numero: '))
+if Numero %2:
+    print('è impar ')
+else:
+    print('È par ')
 /////////////////////////
 
 /////////////////////////

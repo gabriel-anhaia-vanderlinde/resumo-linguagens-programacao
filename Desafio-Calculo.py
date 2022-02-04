@@ -22,7 +22,7 @@ while not desligar:
     elif Operacao == 5:
         resultado := num1 ** num2            
     elif Operacao == 6:
-        resultado := num1 * num2      
+        resultado := pow(num1x,1/num2)
     elif Operacao == 7:
         resultado := num1 % num2      
 

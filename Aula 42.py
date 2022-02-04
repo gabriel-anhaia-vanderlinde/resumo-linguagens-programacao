@@ -1,7 +1,0 @@
-peso1 = float(input('Informe o peso da pessoa: '))
-peso2 = float(input('Informe o peso da pessoa: '))
-peso3 = float(input('Informe o peso da pessoa: '))
-peso4 = float(input('Informe o peso da pessoa: '))
-peso5 = float(input('Informe o peso da pessoa: '))
-print('O maior peso foi de {}'.format(max(peso1, peso2, peso3, peso4, peso5)))
-print('O menor peso foi de {}'.format(min(peso1, peso2, peso3, peso4, peso5)))

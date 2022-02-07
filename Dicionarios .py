@@ -20,3 +20,5 @@ print('='*30)
 
 for count, value in enumerate(ranking):
     print(f'{count + 1}º lugar, {value[0]} que conseguiu o numero {value[1]} no dado')
+
+################################################  
